@@ -1,0 +1,4 @@
+[[redirects]]
+from= "/*"
+to = "/structure.html"
+status = 200
