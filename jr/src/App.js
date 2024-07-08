@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import TodoForm from './components/TodoForm';
+import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList';
 import './App.css';
 
 const App = () => {
   const [todos, setTodos] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
-
+  
   const addTodo = (todo) => {
     setTodos([...todos, todo]);
   };

@@ -13,9 +13,16 @@ const TodoItem = ({ todo, index, toggleComplete, deleteTodo, editTodo }) => {
     setIsEditing(!isEditing);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleEdit();
+    }
+  };
+
   return (
     <div className="todo">
       <div className="left">
+        <span className="index">{index + 1}.</span>
         <input
           type="checkbox"
           checked={todo.completed}
@@ -27,15 +34,17 @@ const TodoItem = ({ todo, index, toggleComplete, deleteTodo, editTodo }) => {
               type="text"
               value={newText}
               onChange={(e) => setNewText(e.target.value)}
+              onKeyDown={handleKeyDown}
             />
             <input
               type="date"
               value={newDate}
               onChange={(e) => setNewDate(e.target.value)}
+              onKeyDown={handleKeyDown}
             />
           </>
         ) : (
-          <>
+          <div className='todos'>
             <span
               style={{ textDecoration: todo.completed ? 'line-through' : '' }}
               onClick={() => toggleComplete(index)}
@@ -43,7 +52,7 @@ const TodoItem = ({ todo, index, toggleComplete, deleteTodo, editTodo }) => {
               {todo.text}
             </span>
             <span className="date">{todo.date}</span>
-          </>
+          </div>
         )}
       </div>
       <div className="right">
