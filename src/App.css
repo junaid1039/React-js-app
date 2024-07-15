@@ -107,7 +107,6 @@ h1 {
   display: flex;
   align-items: center;
   flex: auto;
-  flex-wrap: wrap;
 }
 
 .todo .left input[type="checkbox"] {
