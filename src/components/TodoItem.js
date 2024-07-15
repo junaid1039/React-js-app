@@ -30,6 +30,7 @@ const TodoItem = ({ todo, index, toggleComplete, deleteTodo, editTodo }) => {
         />
         {isEditing ? (
           <>
+          <div className='editing-todo'>
             <input
               type="text"
               value={newText}
@@ -42,6 +43,7 @@ const TodoItem = ({ todo, index, toggleComplete, deleteTodo, editTodo }) => {
               onChange={(e) => setNewDate(e.target.value)}
               onKeyDown={handleKeyDown}
             />
+            </div>
           </>
         ) : (
           <div className='todos'>

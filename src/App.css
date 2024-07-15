@@ -88,25 +88,37 @@ h1 {
   margin-bottom: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
-  flex-wrap: wrap;
+  
+  
+}
   .todos{
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     margin-left: 4%;
   }
-}
 
 .todo:hover {
   transform: scale(1.02);
 }
+.editing-todo {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.editing-todo input:first-child {
+  width: fit-content;
+}
+
 
 .todo .left {
   display: flex;
   align-items: center;
   flex: auto;
+  height: auto;
 }
 
 .todo .left input[type="checkbox"] {
