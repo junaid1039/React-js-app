@@ -45,13 +45,17 @@ const TodoItem = ({ todo, index, toggleComplete, deleteTodo, editTodo }) => {
           </>
         ) : (
           <div className='todos'>
+            <div>
             <span
               style={{ textDecoration: todo.completed ? 'line-through' : '' }}
               onClick={() => toggleComplete(index)}
             >
               {todo.text}
             </span>
+            </div>
+            <div>
             <span className="date">{todo.date}</span>
+            </div>
           </div>
         )}
       </div>

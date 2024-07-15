@@ -88,6 +88,7 @@ h1 {
   margin-bottom: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
+  flex-wrap: wrap;
   .todos{
     width: 100%;
     display: flex;
@@ -105,7 +106,8 @@ h1 {
 .todo .left {
   display: flex;
   align-items: center;
-  flex: 3;
+  flex: auto;
+  flex-wrap: wrap;
 }
 
 .todo .left input[type="checkbox"] {
@@ -146,6 +148,11 @@ h1 {
 .todo .right .delete-icon:hover {
   color: darkred;
 }
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
 
 @media(max-width: 768px){
   .app{

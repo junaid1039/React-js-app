@@ -3,10 +3,15 @@ import React, { useState } from 'react';
 const TodoForm = ({ addTodo }) => {
   const [value, setValue] = useState('');
   const [date, setDate] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!value) return;
+    if (!date) {
+      setError('Please select a date.');
+      return;
+    }
     addTodo({
       text: value,
       date: date,
@@ -14,6 +19,7 @@ const TodoForm = ({ addTodo }) => {
     });
     setValue('');
     setDate('');
+    setError('');
   };
 
   return (
@@ -32,6 +38,7 @@ const TodoForm = ({ addTodo }) => {
         onChange={(e) => setDate(e.target.value)}
       />
       <button type="submit" className="add-task-button">Add Task</button>
+      {error && <p className="error">{error}</p>}
     </form>
   );
 };
